@@ -4,33 +4,28 @@ import { useCallback, useEffect, useState } from "react"
 import useEmblaCarousel from "embla-carousel-react"
 import Autoplay from "embla-carousel-autoplay"
 import { motion } from "framer-motion"
-import { ArrowRight, Shield, Heart, Users, TrendingUp } from "lucide-react"
+import { ArrowRight, Shield, Heart, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import Image from "next/image"
 
 const slides = [
   {
     icon: Shield,
     title: "Protección Integral",
     subtitle: "Blindamos tu operación con sistemas de gestión robustos",
-    bg: "from-petrol/10 via-transparent to-orange/5",
+    image: "/images/hero-1.jpg",
   },
   {
     icon: Heart,
     title: "Bienestar Laboral",
     subtitle: "Transformamos la normativa en una cultura de salud",
-    bg: "from-orange/10 via-transparent to-petrol/5",
+    image: "/images/hero-2.jpg",
   },
   {
     icon: Users,
     title: "Capital Humano",
     subtitle: "Protegemos tu recurso más valioso: tu equipo",
-    bg: "from-petrol/5 via-transparent to-orange/10",
-  },
-  {
-    icon: TrendingUp,
-    title: "Productividad",
-    subtitle: "Reducimos el ausentismo, aumentamos resultados",
-    bg: "from-orange/5 via-transparent to-petrol/10",
+    image: "/images/hero-3.jpg",
   },
 ]
 
@@ -144,32 +139,42 @@ export function HeroCarousel() {
                     className="flex-[0_0_100%] min-w-0 relative"
                   >
                     <div
-                      className={`relative aspect-square max-w-md mx-auto bg-gradient-to-br ${slide.bg} rounded-3xl p-8 flex flex-col items-center justify-center border border-border/50 backdrop-blur-sm`}
+                      className="relative aspect-square max-w-md mx-auto rounded-3xl overflow-hidden border border-border/50 shadow-2xl"
                     >
-                      {/* Decorative Ring */}
-                      <div className="absolute inset-4 rounded-2xl border-2 border-dashed border-petrol/20" />
+                      {/* Background Image */}
+                      <Image
+                        src={slide.image}
+                        alt={slide.title}
+                        fill
+                        className="object-cover"
+                        priority={index === 0}
+                      />
                       
+                      {/* Dark Overlay */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-petrol-dark/90 via-petrol-dark/50 to-transparent" />
+                      
+                      {/* Content */}
                       <motion.div
                         key={selectedIndex}
                         initial={{ scale: 0.8, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="relative z-10 text-center"
+                        className="absolute inset-0 flex flex-col items-center justify-end p-8 text-center"
                       >
-                        <div className="w-24 h-24 mx-auto mb-6 rounded-2xl bg-petrol/10 flex items-center justify-center">
-                          <slide.icon size={48} className="text-petrol" />
+                        <div className="w-16 h-16 mx-auto mb-4 rounded-2xl bg-white/10 backdrop-blur-sm flex items-center justify-center">
+                          <slide.icon size={32} className="text-white" />
                         </div>
-                        <h3 className="text-2xl font-bold text-foreground mb-3">
+                        <h3 className="text-2xl font-bold text-white mb-2">
                           {slide.title}
                         </h3>
-                        <p className="text-muted-foreground">
+                        <p className="text-white/80">
                           {slide.subtitle}
                         </p>
                       </motion.div>
 
                       {/* Corner Accents */}
-                      <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-orange/40 rounded-tl-lg" />
-                      <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-orange/40 rounded-br-lg" />
+                      <div className="absolute top-6 left-6 w-8 h-8 border-l-2 border-t-2 border-orange/60 rounded-tl-lg" />
+                      <div className="absolute bottom-6 right-6 w-8 h-8 border-r-2 border-b-2 border-orange/60 rounded-br-lg" />
                     </div>
                   </div>
                 ))}

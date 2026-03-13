@@ -2,7 +2,8 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Check, Phone, Brain, User } from "lucide-react"
+import { Check, Phone, Brain } from "lucide-react"
+import Image from "next/image"
 
 const highlights = [
   {
@@ -46,27 +47,32 @@ export function AboutSection() {
               
               {/* Photo Frame */}
               <div className="relative h-full bg-card rounded-3xl border border-border shadow-2xl overflow-hidden">
-                {/* Placeholder for Photo */}
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary to-muted flex flex-col items-center justify-center p-8">
-                  <div className="w-32 h-32 rounded-full bg-petrol/10 flex items-center justify-center mb-6">
-                    <User size={64} className="text-petrol" />
-                  </div>
-                  <div className="text-center">
-                    <h3 className="text-xl font-bold text-foreground mb-1">
-                      Maria Fernanda Sanchez Trujillo
-                    </h3>
-                    <p className="text-muted-foreground text-sm mb-4">
-                      Fisioterapeuta
-                    </p>
-                    <span className="inline-block px-4 py-2 bg-petrol/10 rounded-full text-petrol text-sm font-medium">
-                      Especialista en Seguridad y Salud
-                    </span>
-                  </div>
+                {/* Profile Photo */}
+                <Image
+                  src="/images/profile.jpg"
+                  alt="Maria Fernanda Sanchez Trujillo"
+                  fill
+                  className="object-cover"
+                />
+                
+                {/* Overlay with Info */}
+                <div className="absolute inset-0 bg-gradient-to-t from-petrol-dark/95 via-transparent to-transparent" />
+                
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <h3 className="text-xl font-bold mb-1">
+                    Maria Fernanda Sanchez Trujillo
+                  </h3>
+                  <p className="text-white/70 text-sm mb-3">
+                    Fisioterapeuta
+                  </p>
+                  <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-medium">
+                    Especialista en Seguridad y Salud
+                  </span>
                 </div>
 
                 {/* Corner Accents */}
                 <div className="absolute top-4 left-4 w-12 h-12 border-l-2 border-t-2 border-orange/50 rounded-tl-2xl" />
-                <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-petrol/50 rounded-br-2xl" />
+                <div className="absolute bottom-4 right-4 w-12 h-12 border-r-2 border-b-2 border-petrol-light/50 rounded-br-2xl" />
               </div>
             </div>
           </motion.div>

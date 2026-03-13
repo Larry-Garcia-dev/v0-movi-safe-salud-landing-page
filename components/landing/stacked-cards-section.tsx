@@ -2,7 +2,8 @@
 
 import { useState, useRef } from "react"
 import { motion, useInView } from "framer-motion"
-import { Target, Rocket, Eye, Award, ArrowRight } from "lucide-react"
+import { Target, Eye, Award, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
 const cards = [
   {
@@ -13,6 +14,7 @@ const cards = [
       "Transformamos la SST de una obligación legal a una ventaja estratégica. Brindamos asesoría técnica personalizada y ágil.",
     color: "petrol",
     accentColor: "orange",
+    image: "/images/mission.jpg",
   },
   {
     id: "vision",
@@ -22,6 +24,7 @@ const cards = [
       "Para el año 2030, seremos el aliado estratégico referente en consultoría de SST para empresas que buscan una gestión de riesgos humana, digital y eficiente.",
     color: "orange",
     accentColor: "petrol",
+    image: "/images/vision.jpg",
   },
   {
     id: "values",
@@ -31,6 +34,7 @@ const cards = [
       "Integridad, compromiso, innovación y excelencia guían cada una de nuestras acciones para entregar resultados excepcionales.",
     color: "petrol",
     accentColor: "orange",
+    image: "/images/values.jpg",
   },
 ]
 
@@ -126,50 +130,53 @@ export function StackedCardsSection() {
                   className="absolute inset-0"
                 >
                   <div
-                    className={`h-full p-8 rounded-3xl border-2 shadow-xl transition-shadow duration-300
+                    className={`h-full rounded-3xl border-2 shadow-xl transition-shadow duration-300 overflow-hidden relative
                       ${
                         card.color === "petrol"
-                          ? "bg-gradient-to-br from-card via-card to-petrol/5 border-petrol/30"
-                          : "bg-gradient-to-br from-card via-card to-orange/5 border-orange/30"
+                          ? "border-petrol/30"
+                          : "border-orange/30"
                       }
                       ${isActive && isHovered ? "shadow-2xl" : ""}
                     `}
                   >
-                    <div className="h-full flex flex-col">
+                    {/* Background Image */}
+                    <Image
+                      src={card.image}
+                      alt={card.title}
+                      fill
+                      className="object-cover"
+                    />
+                    
+                    {/* Overlay */}
+                    <div 
+                      className={`absolute inset-0 ${
+                        card.color === "petrol"
+                          ? "bg-gradient-to-t from-petrol-dark/95 via-petrol-dark/70 to-petrol-dark/40"
+                          : "bg-gradient-to-t from-orange/95 via-orange/70 to-orange/40"
+                      }`}
+                    />
+                    
+                    <div className="relative h-full flex flex-col p-8">
                       <div
-                        className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6
-                          ${
-                            card.color === "petrol"
-                              ? "bg-petrol/10"
-                              : "bg-orange/10"
-                          }`}
+                        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm"
                       >
                         <card.icon
                           size={32}
-                          className={
-                            card.color === "petrol"
-                              ? "text-petrol"
-                              : "text-orange"
-                          }
+                          className="text-white"
                         />
                       </div>
 
                       <h3
-                        className={`text-2xl font-bold mb-4
-                          ${
-                            card.color === "petrol"
-                              ? "text-petrol"
-                              : "text-orange"
-                          }`}
+                        className="text-2xl font-bold mb-4 text-white"
                       >
                         {card.title}
                       </h3>
 
-                      <p className="text-muted-foreground leading-relaxed flex-grow">
+                      <p className="text-white/90 leading-relaxed flex-grow">
                         {card.content}
                       </p>
 
-                      <div className="flex items-center gap-2 mt-6 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-2 mt-6 text-sm text-white/70">
                         <span>Clic para ver siguiente</span>
                         <ArrowRight size={16} />
                       </div>
@@ -177,20 +184,10 @@ export function StackedCardsSection() {
 
                     {/* Decorative Elements */}
                     <div
-                      className={`absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 rounded-tr-xl
-                        ${
-                          card.accentColor === "petrol"
-                            ? "border-petrol/30"
-                            : "border-orange/30"
-                        }`}
+                      className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 rounded-tr-xl border-white/30"
                     />
                     <div
-                      className={`absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 rounded-bl-xl
-                        ${
-                          card.accentColor === "petrol"
-                            ? "border-petrol/30"
-                            : "border-orange/30"
-                        }`}
+                      className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 rounded-bl-xl border-white/30"
                     />
                   </div>
                 </motion.div>
