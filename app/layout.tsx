@@ -3,7 +3,7 @@ import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter"
 });
@@ -16,19 +16,19 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.png',
+        url: '/images/logo.jpeg', // Punto en lugar de coma
         media: '(prefers-color-scheme: light)',
       },
       {
-        url: '/icon-dark-32x32.png',
+        url: '/image/logo.jpeg', // Añadido '/' inicial para rutas absolutas
         media: '(prefers-color-scheme: dark)',
       },
       {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/images/logo.jpeg',
+        type: 'images/jpeg',      // El 'type' debe ser el formato MIME (image/jpeg)
       },
     ],
-    apple: '/apple-icon.png',
+    apple: '/images/logo.jpeg',
   },
 }
 
