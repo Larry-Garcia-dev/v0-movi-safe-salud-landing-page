@@ -88,7 +88,7 @@ export function AboutSection() {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 text-balance">
-              Al contactarme, <span className="text-petrol">no hablas con un vendedor</span>
+              Cumplimiento legal, <span className="text-petrol">protección humana</span> y visión estratégica.
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
