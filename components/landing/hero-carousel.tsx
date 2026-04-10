@@ -28,15 +28,35 @@ export function HeroCarousel() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.4 }}
-          className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] tracking-tight text-balance"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.1] tracking-tight text-balance"
         >
           <span className="block text-[#F5F5EC]">
-            Prevención en{" "}
-            <span className="text-[#D4AF37] italic">ACCIÓN</span>
+            <span className="font-sans font-extralight tracking-wide">Prevención en</span>{" "}
+            <span className="relative inline-block">
+              <span className="font-serif font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F5E6A3] to-[#D4AF37]">
+                ACCIÓN
+              </span>
+              <motion.span 
+                className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 1.2 }}
+              />
+            </span>
           </span>
           <span className="block text-[#F5F5EC] mt-2 sm:mt-4">
-            Salud en el{" "}
-            <span className="text-[#D4AF37] italic">MOVIMIENTO</span>
+            <span className="font-sans font-extralight tracking-wide">Salud en el</span>{" "}
+            <span className="relative inline-block">
+              <span className="font-serif font-bold italic text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F5E6A3] to-[#D4AF37]">
+                MOVIMIENTO
+              </span>
+              <motion.span 
+                className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"
+                initial={{ scaleX: 0 }}
+                animate={{ scaleX: 1 }}
+                transition={{ duration: 0.8, delay: 1.4 }}
+              />
+            </span>
           </span>
         </motion.h1>
 
