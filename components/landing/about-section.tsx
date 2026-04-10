@@ -31,7 +31,7 @@ export function AboutSection() {
     <section id="nosotros" className="py-24 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-petrol/5 to-transparent" />
-      
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Image/Profile Side */}
@@ -44,7 +44,7 @@ export function AboutSection() {
             <div className="relative aspect-[4/5] max-w-md mx-auto">
               {/* Decorative Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-petrol/20 to-orange/10 rounded-3xl transform rotate-3" />
-              
+
               {/* Photo Frame */}
               <div className="relative h-full bg-card rounded-3xl border border-border shadow-2xl overflow-hidden">
                 {/* Profile Photo */}
@@ -54,10 +54,10 @@ export function AboutSection() {
                   fill
                   className="object-cover"
                 />
-                
+
                 {/* Overlay with Info */}
                 <div className="absolute inset-0 bg-gradient-to-t from-petrol-dark/95 via-transparent to-transparent" />
-                
+
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   <h3 className="text-xl font-bold mb-1">
                     Maria Fernanda Sanchez Trujillo
@@ -92,11 +92,11 @@ export function AboutSection() {
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
-              En MoviSafe Salud, optimizamos los procesos de cumplimiento para que la seguridad 
-              sea un impulso para tu productividad, no una carga administrativa. Aquí trabajas 
-              directamente con la líder de la marca, soy{" "}
-              <strong className="text-petrol font-bold">MARIA FERNANDA SANCHEZ TRUJILLO</strong>, 
-              fisioterapeuta y especialista en Seguridad y Salud en el Trabajo y trabajamos 
+              En MoviSafe Salud, optimizamos los procesos de cumplimiento para que la seguridad
+              sea un impulso para tu productividad, no una carga administrativa. Aquí trabajas
+              directamente con la líder de la marca;  soy{" "}
+              <strong className="text-petrol font-bold">MARIA FERNANDA SANCHEZ TRUJILLO</strong>,
+              fisioterapeuta y especialista en Seguridad y Salud en el Trabajo y trabajamos
               para garantizar resultados excepcionales.
             </p>
 
