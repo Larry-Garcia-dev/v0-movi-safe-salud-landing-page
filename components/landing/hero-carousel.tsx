@@ -88,12 +88,12 @@ export function HeroCarousel() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               <span className="text-balance">
                 <span className="font-light tracking-wide">Prevención en</span>{" "}
-                <span className="relative inline-block">
+                <span className="relative inline-block pr-2">
                   <span className="font-extrabold italic text-transparent bg-clip-text bg-gradient-to-r from-orange via-orange-light to-orange drop-shadow-sm">
                     ACCIÓN
                   </span>
                   <motion.span 
-                    className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-orange/80 to-orange-light rounded-full"
+                    className="absolute -bottom-1 left-0 right-2 h-1 bg-gradient-to-r from-orange/80 to-orange-light rounded-full"
                     initial={{ scaleX: 0, originX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 1 }}
@@ -102,12 +102,12 @@ export function HeroCarousel() {
                 ,{" "}
                 <br className="hidden sm:block" />
                 <span className="font-light tracking-wide">Salud en el</span>{" "}
-                <span className="relative inline-block">
+                <span className="relative inline-block pr-3">
                   <span className="font-extrabold italic text-transparent bg-clip-text bg-gradient-to-r from-petrol via-petrol-light to-petrol drop-shadow-sm">
                     MOVIMIENTO
                   </span>
                   <motion.span 
-                    className="absolute -bottom-1 left-0 w-full h-1 bg-gradient-to-r from-petrol/80 to-petrol-light rounded-full"
+                    className="absolute -bottom-1 left-0 right-3 h-1 bg-gradient-to-r from-petrol/80 to-petrol-light rounded-full"
                     initial={{ scaleX: 0, originX: 0 }}
                     animate={{ scaleX: 1 }}
                     transition={{ duration: 0.8, delay: 1.2 }}
