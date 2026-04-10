@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { motion } from "framer-motion"
 import { ArrowRight, Shield, Heart, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AnimatedWaves } from "@/components/ui/animated-waves"
 import Image from "next/image"
 
 const slides = [
@@ -58,20 +59,8 @@ export function HeroCarousel() {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/images/hero-bg.jpg"
-          alt=""
-          fill
-          className="object-cover opacity-40"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-      </div>
-      
-      {/* Background Pattern Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(74,124,141,0.08),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(234,122,35,0.06),transparent_50%)]" />
+      {/* Animated Waves Background */}
+      <AnimatedWaves />
       
       {/* Geometric Shapes */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-petrol/5 rounded-full blur-3xl" />
