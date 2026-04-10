@@ -83,7 +83,7 @@ export function AboutSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <span className="inline-block px-5 py-2.5 bg-orange/10 rounded-full text-orange text-xl md:text-2xl font-semibold mb-6">
+            <span className="inline-block px-6 py-3 bg-orange/10 rounded-full text-orange text-2xl md:text-3xl lg:text-4xl font-bold mb-8">
               ¿Por qué MoviSafe Salud?
             </span>
 
