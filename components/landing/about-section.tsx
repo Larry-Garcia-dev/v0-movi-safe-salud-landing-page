@@ -92,10 +92,11 @@ export function AboutSection() {
             </h2>
 
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
-              Hablas con la{" "}
-              <strong className="text-foreground">especialista que ejecutará tu proyecto</strong>.
-              Soy María Fernanda Sánchez Trujillo, Fisioterapeuta y Especialista en Seguridad
-              y Salud en el Trabajo. Me involucro personalmente en cada fase de tu proyecto
+              En MoviSafe Salud, optimizamos los procesos de cumplimiento para que la seguridad 
+              sea un impulso para tu productividad, no una carga administrativa. Aquí trabajas 
+              directamente con la líder de la marca, soy{" "}
+              <strong className="text-petrol font-bold">MARIA FERNANDA SANCHEZ TRUJILLO</strong>, 
+              fisioterapeuta y especialista en Seguridad y Salud en el Trabajo y trabajamos 
               para garantizar resultados excepcionales.
             </p>
 
