@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
-import { Target, Eye, Award, ChevronLeft, ChevronRight } from "lucide-react"
+import { Target, Eye, Award } from "lucide-react"
 import Image from "next/image"
 
 const cards = [
@@ -99,7 +99,7 @@ export function StackedCardsSection() {
             <span className="text-orange">Visión</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-xl text-pretty">
-            Haz clic en las flechas o desliza para explorar nuestra identidad.
+            Haz clic en los indicadores o desliza para explorar nuestra identidad.
           </p>
         </motion.div>
 
@@ -200,22 +200,7 @@ export function StackedCardsSection() {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={() => paginate(-1)}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 shadow-lg flex items-center justify-center text-petrol-dark hover:bg-white hover:scale-110 transition-all duration-300"
-            aria-label="Anterior"
-          >
-            <ChevronLeft size={28} />
-          </button>
           
-          <button
-            onClick={() => paginate(1)}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 shadow-lg flex items-center justify-center text-petrol-dark hover:bg-white hover:scale-110 transition-all duration-300"
-            aria-label="Siguiente"
-          >
-            <ChevronRight size={28} />
-          </button>
         </div>
 
         {/* Card Indicators */}
