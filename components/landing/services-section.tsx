@@ -15,9 +15,9 @@ import {
 const services = [
   {
     icon: ClipboardCheck,
-    title: "Auditorías Internas (Pre-Ministerio)",
+    title: "Auditorías internas (Pre-Ministerio)",
     description:
-      "Simulacro de inspección. Evaluamos tu SG con ojo crítico para detectar fallas antes de que se conviertan en multas.",
+      "Simulacro de inspección. Evaluamos tu SG-SST con ojo crítico para detectar fallas antes de que se conviertan en multas.",
     color: "petrol",
   },
   {
@@ -36,21 +36,21 @@ const services = [
   },
   {
     icon: Search,
-    title: "Inspecciones Planeadas",
+    title: "Inspecciones planeadas",
     description:
-      "Recorrido técnico. Identificamos el peligro antes de que se convierta en un costo o tragedia.",
+      "Recorrido técnico. Identificamos el peligro antes de que se convierta en un costo o una tragedia.",
     color: "orange",
   },
   {
     icon: Activity,
-    title: "Análisis de Puestos de Trabajo",
+    title: "Análisis de puestos de trabajo",
     description:
       "Evaluación ergonómica para reducir el ausentismo laboral y aumentar la productividad.",
     color: "petrol",
   },
   {
     icon: AlertTriangle,
-    title: "Reportes de Accidentes (AT)",
+    title: "Reportes de accidentes (AT)",
     description:
       "Gestión ante ARL e investigación. Acompañamiento experto en el momento crítico.",
     color: "orange",

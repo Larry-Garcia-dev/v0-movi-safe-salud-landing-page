@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay"
 import { motion } from "framer-motion"
 import { ArrowRight, Shield, Heart, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { AnimatedWaves } from "@/components/ui/animated-waves"
 import Image from "next/image"
 
 const slides = [
@@ -58,14 +59,14 @@ export function HeroCarousel() {
 
   return (
     <section id="inicio" className="relative min-h-screen flex items-center pt-20 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(74,124,141,0.08),transparent_50%),radial-gradient(circle_at_70%_80%,rgba(234,122,35,0.06),transparent_50%)]" />
+      {/* Animated Waves Background */}
+      <AnimatedWaves />
       
       {/* Geometric Shapes */}
       <div className="absolute top-1/4 right-0 w-96 h-96 bg-petrol/5 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-orange/5 rounded-full blur-3xl" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 lg:py-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <motion.div
@@ -86,11 +87,33 @@ export function HeroCarousel() {
 
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6">
               <span className="text-balance">
-                Prevención en{" "}
-                <span className="text-orange">ACCIÓN</span>,{" "}
+                <span className="font-light tracking-wide">Prevención en</span>{" "}
+                <span className="relative inline-block overflow-visible pr-[0.15em]">
+                  <span className="font-extrabold italic text-transparent bg-clip-text bg-gradient-to-r from-orange via-orange-light to-orange drop-shadow-sm pr-[0.1em]">
+                    ACCIÓN
+                  </span>
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-orange/80 to-orange-light rounded-full"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: 1 }}
+                  />
+                </span>
+                ,{" "}
                 <br className="hidden sm:block" />
-                Salud en el{" "}
-                <span className="text-orange">MOVIMIENTO</span>.
+                <span className="font-light tracking-wide">Salud en el</span>{" "}
+                <span className="relative inline-block overflow-visible pr-[0.15em]">
+                  <span className="font-extrabold italic text-transparent bg-clip-text bg-gradient-to-r from-petrol via-petrol-light to-petrol drop-shadow-sm pr-[0.1em]">
+                    MOVIMIENTO
+                  </span>
+                  <motion.span 
+                    className="absolute -bottom-1 left-0 right-0 h-1 bg-gradient-to-r from-petrol/80 to-petrol-light rounded-full"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                  />
+                </span>
+                .
               </span>
             </h1>
 
