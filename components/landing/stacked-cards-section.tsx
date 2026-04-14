@@ -86,14 +86,14 @@ export function StackedCardsSection() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="inline-block px-4 py-2 bg-orange/10 rounded-full text-orange text-sm font-medium mb-4">
+          <span className="inline-block px-5 py-2.5 bg-orange/10 rounded-full text-orange text-base md:text-lg font-medium mb-4">
             Nuestra Identidad
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4 text-balance">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance">
             <span className="text-petrol">Misión</span> y{" "}
             <span className="text-orange">Visión</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto text-lg text-pretty">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-xl text-pretty">
             Pasa el cursor sobre las tarjetas para desplegarlas o haz clic para rotarlas
           </p>
         </motion.div>
