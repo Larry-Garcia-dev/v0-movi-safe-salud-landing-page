@@ -2,12 +2,12 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { TrendingUp, Phone, Brain } from "lucide-react"
+import { ChartColumnIncreasing, Phone, Brain } from "lucide-react"
 import Image from "next/image"
 
 const highlights = [
   {
-    icon: TrendingUp,
+    icon: ChartColumnIncreasing,
     title: "Compromiso Total",
     description: "Cada proyecto recibe dedicación completa hasta lograr los resultados.",
   },
