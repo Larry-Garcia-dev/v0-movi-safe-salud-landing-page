@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { ChartNoAxesCombined, Phone, Brain } from "lucide-react"
+import { ChartNoAxesCombined, Network, Brain } from "lucide-react"
 import Image from "next/image"
 
 const highlights = [
@@ -12,7 +12,7 @@ const highlights = [
     description: "Cada proyecto recibe dedicación completa hasta lograr los resultados.",
   },
   {
-    icon: Phone,
+    icon: Network,
     title: "Sin Intermediarios",
     description: "Respuestas inmediatas. Comunicación directa con la especialista.",
   },
