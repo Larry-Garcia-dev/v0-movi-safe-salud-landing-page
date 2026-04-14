@@ -1,8 +1,8 @@
 "use client"
 
 import { useState, useRef } from "react"
-import { motion, useInView } from "framer-motion"
-import { Target, Eye, Award, ArrowRight } from "lucide-react"
+import { motion, AnimatePresence, useInView } from "framer-motion"
+import { Target, Eye, Award, ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 
 const cards = [
@@ -40,38 +40,43 @@ const cards = [
 
 export function StackedCardsSection() {
   const [activeIndex, setActiveIndex] = useState(0)
-  const [isHovered, setIsHovered] = useState(false)
+  const [direction, setDirection] = useState(0)
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
-  const handleClick = () => {
-    setActiveIndex((prev) => (prev + 1) % cards.length)
+  const slideVariants = {
+    enter: (direction: number) => ({
+      x: direction > 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+    }),
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1,
+      scale: 1,
+    },
+    exit: (direction: number) => ({
+      zIndex: 0,
+      x: direction < 0 ? 1000 : -1000,
+      opacity: 0,
+      scale: 0.8,
+    }),
   }
 
-  const getCardStyle = (index: number) => {
-    const position = (index - activeIndex + cards.length) % cards.length
+  const swipeConfidenceThreshold = 10000
+  const swipePower = (offset: number, velocity: number) => {
+    return Math.abs(offset) * velocity
+  }
 
-    if (!isHovered) {
-      // Stacked state
-      return {
-        rotateZ: position * 3 - 3,
-        x: position * 8,
-        y: position * 4,
-        scale: 1 - position * 0.05,
-        zIndex: cards.length - position,
-      }
-    } else {
-      // Fan state
-      const fanAngle = 15
-      const fanSpread = 120
-      return {
-        rotateZ: (position - 1) * fanAngle,
-        x: (position - 1) * fanSpread,
-        y: Math.abs(position - 1) * 20,
-        scale: 1,
-        zIndex: position === 0 ? cards.length : cards.length - position,
-      }
-    }
+  const paginate = (newDirection: number) => {
+    setDirection(newDirection)
+    setActiveIndex((prev) => (prev + newDirection + cards.length) % cards.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setDirection(index > activeIndex ? 1 : -1)
+    setActiveIndex(index)
   }
 
   return (
@@ -94,126 +99,170 @@ export function StackedCardsSection() {
             <span className="text-orange">Visión</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-xl text-pretty">
-            Pasa el cursor sobre las tarjetas para desplegarlas o haz clic para rotarlas.
+            Haz clic en las flechas o desliza para explorar nuestra identidad.
           </p>
         </motion.div>
 
-        <div
-          ref={ref}
-          className="flex justify-center items-center min-h-[500px] cursor-pointer"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-          onClick={handleClick}
-        >
-          <div className="relative w-full max-w-md h-[400px]">
-            {cards.map((card, index) => {
-              const style = getCardStyle(index)
-              const isActive = index === activeIndex
-
-              return (
-                <motion.div
-                  key={card.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={
-                    isInView
-                      ? {
-                          opacity: 1,
-                          ...style,
-                        }
-                      : {}
+        <div ref={ref} className="relative">
+          {/* Carousel Container */}
+          <div className="relative h-[450px] md:h-[350px] overflow-hidden rounded-3xl">
+            <AnimatePresence initial={false} custom={direction}>
+              <motion.div
+                key={activeIndex}
+                custom={direction}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{
+                  x: { type: "spring", stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.3 },
+                  scale: { duration: 0.4 },
+                }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={1}
+                onDragEnd={(e, { offset, velocity }) => {
+                  const swipe = swipePower(offset.x, velocity.x)
+                  if (swipe < -swipeConfidenceThreshold) {
+                    paginate(1)
+                  } else if (swipe > swipeConfidenceThreshold) {
+                    paginate(-1)
                   }
-                  transition={{
-                    duration: 0.5,
-                    ease: "easeOut",
-                  }}
-                  style={{ zIndex: style.zIndex }}
-                  className="absolute inset-0"
-                >
-                  <div
-                    className={`h-full rounded-3xl border-2 shadow-xl transition-shadow duration-300 overflow-hidden relative
-                      ${
-                        card.color === "petrol"
-                          ? "border-petrol/30"
-                          : "border-orange/30"
-                      }
-                      ${isActive && isHovered ? "shadow-2xl" : ""}
-                    `}
-                  >
-                    {/* Background Image */}
-                    <Image
-                      src={card.image}
-                      alt={card.title}
-                      fill
-                      className="object-cover"
-                    />
-                    
-                    {/* Overlay */}
-                    <div 
-                      className={`absolute inset-0 ${
-                        card.color === "petrol"
-                          ? "bg-gradient-to-t from-petrol-dark/95 via-petrol-dark/70 to-petrol-dark/40"
-                          : "bg-gradient-to-t from-orange/95 via-orange/70 to-orange/40"
-                      }`}
-                    />
-                    
-                    <div className="relative h-full flex flex-col p-8">
-                      <div
-                        className="w-16 h-16 rounded-2xl flex items-center justify-center mb-6 bg-white/20 backdrop-blur-sm"
-                      >
-                        <card.icon
-                          size={32}
-                          className="text-white"
-                        />
+                }}
+                className="absolute inset-0 cursor-grab active:cursor-grabbing"
+              >
+                {(() => {
+                  const card = cards[activeIndex]
+                  return (
+                    <div
+                      className={`h-full rounded-3xl border-2 shadow-2xl overflow-hidden relative
+                        ${card.color === "petrol" ? "border-petrol/30" : "border-orange/30"}
+                      `}
+                    >
+                      {/* Background Image */}
+                      <Image
+                        src={card.image}
+                        alt={card.title}
+                        fill
+                        className="object-cover"
+                      />
+                      
+                      {/* Overlay */}
+                      <div 
+                        className={`absolute inset-0 ${
+                          card.color === "petrol"
+                            ? "bg-gradient-to-r from-petrol-dark/95 via-petrol-dark/80 to-petrol-dark/60"
+                            : "bg-gradient-to-r from-orange/95 via-orange/80 to-orange/60"
+                        }`}
+                      />
+                      
+                      <div className="relative h-full flex flex-col md:flex-row items-center p-8 md:p-12 gap-8">
+                        {/* Icon */}
+                        <motion.div
+                          initial={{ scale: 0, rotate: -180 }}
+                          animate={{ scale: 1, rotate: 0 }}
+                          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+                          className="w-24 h-24 md:w-32 md:h-32 rounded-3xl flex items-center justify-center bg-white/20 backdrop-blur-sm shrink-0"
+                        >
+                          <card.icon size={48} className="text-white md:w-16 md:h-16" />
+                        </motion.div>
+
+                        {/* Content */}
+                        <div className="flex-1 text-center md:text-left">
+                          <motion.h3
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                            className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-white"
+                          >
+                            {card.title}
+                          </motion.h3>
+
+                          <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                            className="text-white/90 text-lg md:text-xl leading-relaxed max-w-2xl"
+                          >
+                            {card.content}
+                          </motion.p>
+                        </div>
                       </div>
 
-                      <h3
-                        className="text-2xl font-bold mb-4 text-white"
-                      >
-                        {card.title}
-                      </h3>
-
-                      <p className="text-white/90 leading-relaxed flex-grow">
-                        {card.content}
-                      </p>
-
-                      <div className="flex items-center gap-2 mt-6 text-sm text-white/70">
-                        <span>Clic para ver la siguiente</span>
-                        <ArrowRight size={16} />
-                      </div>
+                      {/* Decorative Elements */}
+                      <div className="absolute top-6 right-6 w-12 h-12 border-r-2 border-t-2 rounded-tr-2xl border-white/20" />
+                      <div className="absolute bottom-6 left-6 w-12 h-12 border-l-2 border-b-2 rounded-bl-2xl border-white/20" />
                     </div>
-
-                    {/* Decorative Elements */}
-                    <div
-                      className="absolute top-6 right-6 w-8 h-8 border-r-2 border-t-2 rounded-tr-xl border-white/30"
-                    />
-                    <div
-                      className="absolute bottom-6 left-6 w-8 h-8 border-l-2 border-b-2 rounded-bl-xl border-white/30"
-                    />
-                  </div>
-                </motion.div>
-              )
-            })}
+                  )
+                })()}
+              </motion.div>
+            </AnimatePresence>
           </div>
+
+          {/* Navigation Arrows */}
+          <button
+            onClick={() => paginate(-1)}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 shadow-lg flex items-center justify-center text-petrol-dark hover:bg-white hover:scale-110 transition-all duration-300"
+            aria-label="Anterior"
+          >
+            <ChevronLeft size={28} />
+          </button>
+          
+          <button
+            onClick={() => paginate(1)}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-10 w-12 h-12 md:w-14 md:h-14 rounded-full bg-white/90 shadow-lg flex items-center justify-center text-petrol-dark hover:bg-white hover:scale-110 transition-all duration-300"
+            aria-label="Siguiente"
+          >
+            <ChevronRight size={28} />
+          </button>
         </div>
 
         {/* Card Indicators */}
-        <div className="flex justify-center gap-3 mt-8">
+        <div className="flex justify-center gap-4 mt-8">
           {cards.map((card, index) => (
             <button
               key={card.id}
-              onClick={(e) => {
-                e.stopPropagation()
-                setActiveIndex(index)
-              }}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              onClick={() => goToSlide(index)}
+              className={`relative h-3 rounded-full transition-all duration-500 overflow-hidden ${
+                index === activeIndex ? "w-12" : "w-3"
+              } ${
                 index === activeIndex
                   ? card.color === "petrol"
-                    ? "bg-petrol w-8"
-                    : "bg-orange w-8"
-                  : "bg-border hover:bg-muted-foreground/30"
+                    ? "bg-petrol"
+                    : "bg-orange"
+                  : "bg-border hover:bg-muted-foreground/50"
               }`}
-              aria-label={`View ${card.title}`}
-            />
+              aria-label={`Ver ${card.title}`}
+            >
+              {index === activeIndex && (
+                <motion.div
+                  className="absolute inset-0 bg-white/30"
+                  initial={{ x: "-100%" }}
+                  animate={{ x: "100%" }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+                />
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Card Labels */}
+        <div className="flex justify-center gap-8 mt-6">
+          {cards.map((card, index) => (
+            <button
+              key={card.id}
+              onClick={() => goToSlide(index)}
+              className={`text-sm md:text-base font-medium transition-all duration-300 ${
+                index === activeIndex
+                  ? card.color === "petrol"
+                    ? "text-petrol scale-110"
+                    : "text-orange scale-110"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              {card.title}
+            </button>
           ))}
         </div>
       </div>
