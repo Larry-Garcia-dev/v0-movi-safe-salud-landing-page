@@ -19,7 +19,7 @@ const highlights = [
   {
     icon: Brain,
     title: "Conocimiento Profundo",
-    description: "Años de experiencia en el sector de seguridad y salud ocupacional.",
+    description: "Conocimiento de tu empresa, lo que permite diseñar soluciones que realmente funcionan.",
   },
 ]
 
