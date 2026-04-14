@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { ChartNoAxesCombined, Network, Brain } from "lucide-react"
+import { ChartNoAxesCombined, Network, Brain, FileCheck2 } from "lucide-react"
 import Image from "next/image"
 
 const highlights = [
@@ -20,6 +20,11 @@ const highlights = [
     icon: Brain,
     title: "Conocimiento Profundo",
     description: "Conocimiento de tu empresa, lo que permite diseñar soluciones que realmente funcionan.",
+  },
+  {
+    icon: FileCheck2,
+    title: "Cumplimiento Normativo",
+    description: "Documentación con soporte legal y normativo vigente.",
   },
 ]
 
