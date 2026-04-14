@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence, useInView } from "framer-motion"
 import { Target, Eye, Award, X, ArrowRight } from "lucide-react"
 import Image from "next/image"
@@ -137,6 +137,18 @@ export function StackedCardsSection() {
     setTimeout(() => setModalCard(null), 300)
     document.body.style.overflow = "unset"
   }
+
+  // Autoplay effect - pauses when modal is open
+  useEffect(() => {
+    if (modalOpen) return
+
+    const interval = setInterval(() => {
+      setDirection(1)
+      setActiveIndex((prev) => (prev + 1) % cards.length)
+    }, 5000)
+
+    return () => clearInterval(interval)
+  }, [modalOpen])
 
   return (
     <>
