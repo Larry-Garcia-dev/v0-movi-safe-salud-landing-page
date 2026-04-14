@@ -14,7 +14,7 @@ const highlights = [
   {
     icon: Network,
     title: "Sin Intermediarios",
-    description: "Respuestas inmediatas. Comunicación directa con la especialista.",
+    description: "Respuestas inmediatas y soluciones técnicas.",
   },
   {
     icon: Brain,
