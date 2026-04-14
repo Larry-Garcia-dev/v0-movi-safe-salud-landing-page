@@ -78,13 +78,18 @@ export function Footer() {
           >
             <h3 className="text-lg font-semibold mb-6">Navegación</h3>
             <nav className="flex flex-col gap-3">
-              {["Inicio", "Servicios", "Nosotros", "Misión"].map((link) => (
+              {[
+                  { name: "Inicio", href: "#inicio" },
+                  { name: "Servicios", href: "#servicios" },
+                  { name: "Nosotros", href: "#nosotros" },
+                  { name: "Misión y Visión", href: "#mision" },
+                ].map((link) => (
                 <a
-                  key={link}
-                  href={`#${link.toLowerCase()}`}
+                  key={link.name}
+                  href={link.href}
                   className="text-white/70 hover:text-orange transition-colors"
                 >
-                  {link}
+                  {link.name}
                 </a>
               ))}
             </nav>

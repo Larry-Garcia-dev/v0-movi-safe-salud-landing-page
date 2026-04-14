@@ -55,7 +55,7 @@ export function AboutSection() {
                 {/* Profile Photo */}
                 <Image
                   src="/images/maria-fernanda.jpeg"
-                  alt="Maria Fernanda Sanchez Trujillo - Fisioterapeuta y Especialista en Seguridad y Salud"
+                  alt="María Fernanda Sánchez Trujillo - Fisioterapeuta y especialista en Seguridad y Salud"
                   fill
                   className="object-cover object-top"
                 />
@@ -65,7 +65,7 @@ export function AboutSection() {
 
                 <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-xl font-bold mb-1">
-                    Maria Fernanda Sanchez Trujillo
+                    María Fernanda Sánchez Trujillo
                   </h3>
                   <p className="text-white/80 text-sm mb-2">
                     Fisioterapeuta
@@ -99,9 +99,9 @@ export function AboutSection() {
             <p className="text-xl text-muted-foreground mb-8 leading-relaxed text-pretty">
               En MoviSafe Salud, optimizamos los procesos de cumplimiento para que la seguridad
               sea un impulso para tu productividad, no una carga administrativa. Aquí trabajas
-              directamente con la líder de la marca;  soy{" "}
-              <strong className="text-petrol font-bold">MARIA FERNANDA SANCHEZ TRUJILLO</strong>,
-              fisioterapeuta y especialista en Seguridad y Salud en el Trabajo y trabajamos
+              directamente con la líder de la marca. Soy{" "}
+              <strong className="text-petrol font-bold">MARÍA FERNANDA SÁNCHEZ TRUJILLO</strong>,
+              fisioterapeuta y especialista en Seguridad y Salud en el Trabajo. Trabajamos
               para garantizar resultados excepcionales.
             </p>
 

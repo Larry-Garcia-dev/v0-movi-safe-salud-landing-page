@@ -11,7 +11,7 @@ const cards = [
     icon: Target,
     title: "Misión",
     content:
-      "Transformamos la SST de una obligación legal a una ventaja estratégica. Brindamos asesoría técnica personalizada y ágil.",
+      "Transformamos la SST de una obligación legal en una ventaja estratégica. Brindamos asesoría técnica personalizada y ágil.",
     color: "petrol",
     accentColor: "orange",
     image: "/images/mission.jpg",
@@ -21,7 +21,7 @@ const cards = [
     icon: Eye,
     title: "Visión",
     content:
-      "Para el año 2030, seremos el aliado estratégico referente en consultoría de SST para empresas que buscan una gestión de riesgos humana, digital y eficiente.",
+      "Para el año 2030, seremos el aliado estratégico de referencia en consultoría de SST para empresas que buscan una gestión de riesgos humana, digital y eficiente.",
     color: "orange",
     accentColor: "petrol",
     image: "/images/vision.jpg",
@@ -94,7 +94,7 @@ export function StackedCardsSection() {
             <span className="text-orange">Visión</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-xl text-pretty">
-            Pasa el cursor sobre las tarjetas para desplegarlas o haz clic para rotarlas
+            Pasa el cursor sobre las tarjetas para desplegarlas o haz clic para rotarlas.
           </p>
         </motion.div>
 
@@ -177,7 +177,7 @@ export function StackedCardsSection() {
                       </p>
 
                       <div className="flex items-center gap-2 mt-6 text-sm text-white/70">
-                        <span>Clic para ver siguiente</span>
+                        <span>Clic para ver la siguiente</span>
                         <ArrowRight size={16} />
                       </div>
                     </div>

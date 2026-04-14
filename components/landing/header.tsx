@@ -10,8 +10,7 @@ const navLinks = [
   { name: "Inicio", href: "#inicio" },
   { name: "Servicios", href: "#servicios" },
   { name: "Nosotros", href: "#nosotros" },
-  { name: "Misión", href: "#mision" },
-  { name: "Visión", href: "#vision" },
+  { name: "Misión y Visión", href: "#mision" },
 ]
 
 export function Header() {

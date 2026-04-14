@@ -7,7 +7,7 @@ import { useState } from "react"
 export function WhatsAppBubble() {
   const [isHovered, setIsHovered] = useState(false)
   const phoneNumber = "573107568927"
-  const message = "Hola, me gustaría obtener más información sobre los servicios de MoviSafe Salud."
+  const message = "¡Hola! Me gustaría obtener más información sobre los servicios de MoviSafe Salud."
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   return (
