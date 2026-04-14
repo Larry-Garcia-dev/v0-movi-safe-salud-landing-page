@@ -38,15 +38,15 @@ export function AboutSection() {
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-petrol/5 to-transparent" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-center">
+        <div ref={ref} className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Image/Profile Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
-            className="relative"
+            className="relative lg:sticky lg:top-24"
           >
-            <div className="relative aspect-[4/5] max-w-md mx-auto">
+            <div className="relative aspect-[2/3] max-w-sm mx-auto lg:max-w-md lg:aspect-[9/16]">
               {/* Decorative Background */}
               <div className="absolute inset-0 bg-gradient-to-br from-petrol/20 to-orange/10 rounded-3xl transform rotate-3" />
 
@@ -54,20 +54,20 @@ export function AboutSection() {
               <div className="relative h-full bg-card rounded-3xl border border-border shadow-2xl overflow-hidden">
                 {/* Profile Photo */}
                 <Image
-                  src="/images/profile.jpg"
-                  alt="Maria Fernanda Sanchez Trujillo"
+                  src="/images/maria-fernanda.jpeg"
+                  alt="Maria Fernanda Sanchez Trujillo - Fisioterapeuta y Especialista en Seguridad y Salud"
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
 
                 {/* Overlay with Info */}
-                <div className="absolute inset-0 bg-gradient-to-t from-petrol-dark/95 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent" />
 
-                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                   <h3 className="text-xl font-bold mb-1">
                     Maria Fernanda Sanchez Trujillo
                   </h3>
-                  <p className="text-white/70 text-sm mb-3">
+                  <p className="text-white/80 text-sm mb-2">
                     Fisioterapeuta
                   </p>
                   <span className="inline-block px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm font-medium">
