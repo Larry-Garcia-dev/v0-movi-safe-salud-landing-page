@@ -22,8 +22,8 @@ const contactLinks = [
   {
     icon: Mail,
     label: "Email",
-    value: "mariafer.2205@hotmail.com",
-    href: "mailto:mariafer.2205@hotmail.com",
+    value: "admin.mafesanchez@movisafesalud.com",
+    href: "mailto:admin.mafesanchez@movisafesalud.com",
     color: "hover:text-orange",
   },
 ]

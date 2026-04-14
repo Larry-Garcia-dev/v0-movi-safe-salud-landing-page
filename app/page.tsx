@@ -4,6 +4,7 @@ import { ServicesSection } from "@/components/landing/services-section"
 import { AboutSection } from "@/components/landing/about-section"
 import { StackedCardsSection } from "@/components/landing/stacked-cards-section"
 import { Footer } from "@/components/landing/footer"
+import { WhatsAppBubble } from "@/components/ui/whatsapp-bubble"
 
 export default function HomePage() {
   return (
@@ -14,6 +15,7 @@ export default function HomePage() {
       <AboutSection />
       <StackedCardsSection />
       <Footer />
+      <WhatsAppBubble />
     </main>
   )
 }
