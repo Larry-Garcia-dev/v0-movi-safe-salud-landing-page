@@ -11,14 +11,14 @@ const cards = [
     icon: Target,
     title: "Misión",
     content:
-      "Transformamos la SST de una obligación legal en una ventaja estratégica. Brindamos asesoría técnica personalizada y ágil.",
+      "Transformamos la Seguridad y Salud en el Trabajo para que deje de ser un trámite y se convierta en una cultura de bienestar y eficiencia.",
     fullContent: {
       subtitle: "Nuestra razón de ser",
       paragraphs: [
-        "En MoviSafe Salud, nuestra misión es transformar la Seguridad y Salud en el Trabajo de una simple obligación legal en una verdadera ventaja estratégica para las empresas colombianas.",
-        "Brindamos asesoría técnica personalizada, ágil y de alta calidad, acompañando a nuestros clientes en cada paso del proceso de implementación y mejora continua de sus Sistemas de Gestión de Seguridad y Salud en el Trabajo (SG-SST).",
-        "Nos comprometemos a generar ambientes de trabajo seguros, saludables y productivos, donde cada colaborador pueda desempeñar sus funciones con la tranquilidad de estar protegido.",
-        "Trabajamos con pasión y dedicación para que la prevención de riesgos laborales se convierta en parte integral de la cultura organizacional de cada empresa que asesoramos."
+        "En MoviSafe Salud, transformamos la Seguridad y Salud en el Trabajo para que deje de ser un trámite y se convierta en una cultura de bienestar y eficiencia.",
+        "Nuestra misión es brindar un acompañamiento genuino, cercano y experto, eliminando la complejidad administrativa para convertir el cumplimiento legal en una ventaja estratégica.",
+        "Trabajamos mano a mano con las empresas como su aliado de confianza, facilitando procesos fluidos que protegen el talento humano y aseguran la continuidad operativa.",
+        "En MoviSafe Salud, garantizamos que la prevención sea el motor de productividad de cada empresa, que fundamental se vuelve sencillo, permitiendo que las organizaciones se muevan con total seguridad hacia su crecimiento."
       ],
       highlights: [
         "Asesoría técnica personalizada",
@@ -36,14 +36,13 @@ const cards = [
     icon: Eye,
     title: "Visión",
     content:
-      "Para el año 2030, seremos el aliado estratégico de referencia en consultoría de SST para empresas que buscan una gestión de riesgos humana, digital y eficiente.",
+      "Seremos reconocidos por convertir la complejidad en simplicidad, logrando que cada organización en la que intervenimos deje de evadir la norma para abrazar el bienestar como su mayor activo",
     fullContent: {
       subtitle: "Hacia dónde vamos",
       paragraphs: [
-        "Para el año 2030, MoviSafe Salud será reconocida como el aliado estratégico de referencia en consultoría de Seguridad y Salud en el Trabajo para empresas en Colombia que buscan una gestión de riesgos humana, digital y eficiente.",
-        "Aspiramos a liderar la transformación del sector SST, incorporando tecnologías innovadoras y metodologías modernas que faciliten el cumplimiento normativo sin sacrificar la productividad empresarial.",
-        "Nuestra visión incluye expandir nuestro alcance a nivel nacional, manteniendo siempre el trato cercano y personalizado que nos caracteriza, demostrando que el crecimiento y la calidad pueden ir de la mano.",
-        "Seremos pioneros en la implementación de soluciones digitales para la gestión de SST, haciendo que la seguridad laboral sea accesible, comprensible y práctica para empresas de todos los tamaños."
+        "Buscamos que para el 2030, MoviSafe Salud sea sinónimo de tranquilidad administrativa y eficiencia operativa, logrando que la prevención sea una elección consciente y entusiasta para las organizaciones.",
+        "Consolidarnos como el referente líder en la transformación de la cultura preventiva en las organizaciones. Aspiramos a ser el aliado estratégico que logre la adherencia total de las empresas hacia la Seguridad y Salud en el Trabajo, posicionándola no como un requisito denso, sino como un pilar fundamental, ágil y natural del éxito empresarial.",
+        "En MoviSafe Salud, seremos reconocidos por convertir la complejidad en simplicidad, logrando que cada organización en la que intervenimos deje de evadir la norma para abrazar el bienestar como su mayor activo."
       ],
       highlights: [
         "Liderazgo en el sector SST",
@@ -61,22 +60,22 @@ const cards = [
     icon: Award,
     title: "Valores",
     content:
-      "Integridad, compromiso, innovación y excelencia guían cada una de nuestras acciones para entregar resultados excepcionales.",
-    fullContent: {
-      subtitle: "Lo que nos define",
-      paragraphs: [
-        "Integridad: Actuamos con honestidad, transparencia y ética en cada interacción. Nuestros clientes confían en nosotros porque siempre decimos la verdad y cumplimos lo que prometemos.",
-        "Compromiso: Nos involucramos profundamente con cada proyecto, tratando los objetivos de nuestros clientes como propios. No descansamos hasta lograr los resultados esperados.",
-        "Innovación: Buscamos constantemente nuevas formas de hacer las cosas mejor. Incorporamos tecnología y metodologías modernas para ofrecer soluciones más eficientes y efectivas.",
-        "Excelencia: Nos exigimos los más altos estándares de calidad en todo lo que hacemos. Cada documento, cada capacitación y cada asesoría refleja nuestro compromiso con la perfección."
-      ],
-      highlights: [
-        "Integridad y transparencia",
-        "Compromiso total",
-        "Innovación constante",
-        "Excelencia en el servicio"
-      ]
-    },
+      "En MoviSafe Salud, nuestra ética de trabajo se resume en una promesa: hacer que lo fundamental sea sencillo. No solo cumplimos con la norma, transformamos tu empresa a través de cinco pilares estratégicos", fullContent: {
+        subtitle: "Lo que nos define",
+        paragraphs: [
+          "Simplicidad Resolutiva: Creemos firmemente que la seguridad no tiene por qué ser compleja para ser efectiva. Nuestra capacidad radica en traducir normativas densas y procesos técnicos en soluciones claras, ágiles y fáciles de ejecutar, eliminando cualquier barrera administrativa que detenga la operatividad de nuestros clientes",
+          "Acompañamiento Genuino: Somos un aliado que camina mano a mano con la organización. Nos involucramos en la realidad de cada empresa para ofrecer un respaldo cercano y humano, asegurando que los líderes nunca se sientan solos frente a sus responsabilidades legales y preventivas.",
+          "Rigor Técnico con Sentido: Aplicamos la norma con excelencia y precisión técnica, pero siempre bajo una mirada estratégica. Cada recomendación y proceso que lideramos tiene un propósito claro: proteger la vida del trabajador y garantizar la rentabilidad y continuidad del negocio, convirtiendo la ley en un activo de valor.",
+          "Innovación Preventiva: Nos anticipamos a los riesgos mediante enfoques modernos y creativos que integran la seguridad en el ADN de la empresa, logrando que la prevención sea percibida como una herramienta de modernización y no como una imposición.",
+          "Empoderamiento Cultural: Trabajamos para que la Seguridad y Salud en el Trabajo sea un lenguaje común y entusiasta en todos los niveles de la organización. Nuestro objetivo es inspirar una adherencia natural donde el cuidado mutuo sea una elección consciente, transformando la obligación en convicción"
+        ],
+        highlights: [
+          "Integridad y transparencia",
+          "Compromiso total",
+          "Innovación constante",
+          "Excelencia en el servicio"
+        ]
+      },
     color: "petrol",
     accentColor: "orange",
     image: "/images/values.jpg",
@@ -145,7 +144,7 @@ export function StackedCardsSection() {
     const interval = setInterval(() => {
       setDirection(1)
       setActiveIndex((prev) => (prev + 1) % cards.length)
-    }, 5000)
+    }, 8000)
 
     return () => clearInterval(interval)
   }, [modalOpen])
@@ -155,7 +154,7 @@ export function StackedCardsSection() {
       <section id="mision" className="py-24 bg-secondary/30 relative overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(234,122,35,0.08),transparent_50%)]" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -167,8 +166,10 @@ export function StackedCardsSection() {
               Nuestra Identidad
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 text-balance">
-              <span className="text-petrol">Misión</span> y{" "}
-              <span className="text-orange">Visión</span>
+              <span className="text-petrol">Misión</span>,{" "}
+              <span className="text-orange">Visión</span>,{" "}
+              <span className="text-petrol">Valores</span> 
+
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-xl text-pretty">
               Haz clic en los indicadores o desliza para explorar nuestra identidad.
@@ -219,16 +220,15 @@ export function StackedCardsSection() {
                           fill
                           className="object-cover"
                         />
-                        
+
                         {/* Overlay */}
-                        <div 
-                          className={`absolute inset-0 ${
-                            card.color === "petrol"
-                              ? "bg-gradient-to-r from-petrol-dark/95 via-petrol-dark/80 to-petrol-dark/60"
-                              : "bg-gradient-to-r from-orange/95 via-orange/80 to-orange/60"
-                          }`}
+                        <div
+                          className={`absolute inset-0 ${card.color === "petrol"
+                            ? "bg-gradient-to-r from-petrol-dark/95 via-petrol-dark/80 to-petrol-dark/60"
+                            : "bg-gradient-to-r from-orange/95 via-orange/80 to-orange/60"
+                            }`}
                         />
-                        
+
                         <div className="relative h-full flex flex-col md:flex-row items-center p-8 md:p-12 gap-8">
                           {/* Icon */}
                           <motion.div
@@ -291,15 +291,13 @@ export function StackedCardsSection() {
               <button
                 key={card.id}
                 onClick={() => goToSlide(index)}
-                className={`relative h-3 rounded-full transition-all duration-500 overflow-hidden ${
-                  index === activeIndex ? "w-12" : "w-3"
-                } ${
-                  index === activeIndex
+                className={`relative h-3 rounded-full transition-all duration-500 overflow-hidden ${index === activeIndex ? "w-12" : "w-3"
+                  } ${index === activeIndex
                     ? card.color === "petrol"
                       ? "bg-petrol"
                       : "bg-orange"
                     : "bg-border hover:bg-muted-foreground/50"
-                }`}
+                  }`}
                 aria-label={`Ver ${card.title}`}
               >
                 {index === activeIndex && (
@@ -320,13 +318,12 @@ export function StackedCardsSection() {
               <button
                 key={card.id}
                 onClick={() => goToSlide(index)}
-                className={`text-sm md:text-base font-medium transition-all duration-300 ${
-                  index === activeIndex
-                    ? card.color === "petrol"
-                      ? "text-petrol scale-110"
-                      : "text-orange scale-110"
-                    : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`text-sm md:text-base font-medium transition-all duration-300 ${index === activeIndex
+                  ? card.color === "petrol"
+                    ? "text-petrol scale-110"
+                    : "text-orange scale-110"
+                  : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {card.title}
               </button>
@@ -359,16 +356,15 @@ export function StackedCardsSection() {
               initial={{ scale: 0.8, opacity: 0, y: 50 }}
               animate={{ scale: 1, opacity: 1, y: 0 }}
               exit={{ scale: 0.8, opacity: 0, y: 50 }}
-              transition={{ 
-                type: "spring", 
-                stiffness: 300, 
+              transition={{
+                type: "spring",
+                stiffness: 300,
                 damping: 25,
-                duration: 0.5 
+                duration: 0.5
               }}
               onClick={(e) => e.stopPropagation()}
-              className={`relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl shadow-2xl ${
-                modalCard.color === "petrol" ? "bg-petrol-dark" : "bg-orange"
-              }`}
+              className={`relative w-full max-w-4xl max-h-[90vh] overflow-hidden rounded-3xl shadow-2xl ${modalCard.color === "petrol" ? "bg-petrol-dark" : "bg-orange"
+                }`}
             >
               {/* Background Image */}
               <div className="absolute inset-0">
@@ -378,11 +374,10 @@ export function StackedCardsSection() {
                   fill
                   className="object-cover opacity-20"
                 />
-                <div className={`absolute inset-0 ${
-                  modalCard.color === "petrol"
-                    ? "bg-gradient-to-br from-petrol-dark via-petrol-dark/95 to-petrol/90"
-                    : "bg-gradient-to-br from-orange via-orange/95 to-orange-light/90"
-                }`} />
+                <div className={`absolute inset-0 ${modalCard.color === "petrol"
+                  ? "bg-gradient-to-br from-petrol-dark via-petrol-dark/95 to-petrol/90"
+                  : "bg-gradient-to-br from-orange via-orange/95 to-orange-light/90"
+                  }`} />
               </div>
 
               {/* Close Button */}
