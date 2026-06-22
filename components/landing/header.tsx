@@ -25,6 +25,29 @@ export function Header() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
+  const handleMobileLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault()
+    setIsMobileMenuOpen(false)
+
+    if (typeof window !== "undefined") {
+      const targetId = href.replace("#", "")
+      const element = document.getElementById(targetId)
+      if (element) {
+        const headerOffset = 64 // Height of mobile header (h-16 = 64px)
+        const elementPosition = element.getBoundingClientRect().top
+        const offsetPosition = elementPosition + window.scrollY - headerOffset
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        })
+        
+        // Update URL hash without jumping/triggering scroll
+        window.history.pushState(null, "", href)
+      }
+    }
+  }
+
   return (
     <motion.header
       initial={{ y: -100 }}
@@ -103,7 +126,7 @@ export function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleMobileLinkClick(e, link.href)}
                   className="px-4 py-3 text-foreground/80 hover:text-petrol hover:bg-secondary rounded-lg transition-colors"
                 >
                   {link.name}
@@ -113,7 +136,7 @@ export function Header() {
                 asChild
                 className="mt-2 bg-orange hover:bg-orange-bright text-white font-semibold rounded-full"
               >
-                <a href="#contacto" onClick={() => setIsMobileMenuOpen(false)}>
+                <a href="#contacto" onClick={(e) => handleMobileLinkClick(e, "#contacto")}>
                   Contacto
                 </a>
               </Button>
