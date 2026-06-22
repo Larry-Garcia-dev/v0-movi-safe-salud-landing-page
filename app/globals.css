@@ -136,4 +136,12 @@
   body {
     @apply bg-background text-foreground;
   }
+  html {
+    scroll-padding-top: 64px; /* Mobile header height */
+  }
+  @media (min-width: 768px) {
+    html {
+      scroll-padding-top: 80px; /* Desktop header height */
+    }
+  }
 }

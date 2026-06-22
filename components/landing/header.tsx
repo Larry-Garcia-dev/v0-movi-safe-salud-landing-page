@@ -29,7 +29,7 @@ export function Header() {
     e.preventDefault()
     setIsMobileMenuOpen(false)
 
-    if (typeof window !== "undefined") {
+    setTimeout(() => {
       const targetId = href.replace("#", "")
       const element = document.getElementById(targetId)
       if (element) {
@@ -42,10 +42,9 @@ export function Header() {
           behavior: "smooth",
         })
         
-        // Update URL hash without jumping/triggering scroll
         window.history.pushState(null, "", href)
       }
-    }
+    }, 250)
   }
 
   return (
